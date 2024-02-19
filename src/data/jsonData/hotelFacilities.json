@@ -1,0 +1,42 @@
+[
+  {
+    "facilityName": "Free Wi-Fi",
+    "icon": "wifi"
+  },
+  {
+    "facilityName": "Swimming Pool",
+    "icon": "pool"
+  },
+  {
+    "facilityName": "Fitness Center",
+    "icon": "dumbbell"
+  },
+  {
+    "facilityName": "Restaurant",
+    "icon": "food"
+  },
+  {
+    "facilityName": "Room Service",
+    "icon": "bed"
+  },
+  {
+    "facilityName": "Parking",
+    "icon": "parking"
+  },
+  {
+    "facilityName": "24/7 Reception",
+    "icon": "hours-24"
+  },
+  {
+    "facilityName": "Spa",
+    "icon": "hot-tub"
+  },
+  {
+    "facilityName": "Conference Room",
+    "icon": "town-hall"
+  },
+  {
+    "facilityName": "Pet Friendly",
+    "icon": "dog"
+  }
+]

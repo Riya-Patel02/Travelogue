@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "149553573656",
+    "project_id": "travelogue-31f0f",
+    "storage_bucket": "travelogue-31f0f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149553573656:android:9d085b01584c8b3419b86d",
+        "android_client_info": {
+          "package_name": "com.userapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzLEIw4EBes_NTFRPwLqylHDkNYca3O5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
