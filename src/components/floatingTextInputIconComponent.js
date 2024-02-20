@@ -43,6 +43,8 @@ function FloatingTextInputIconComponent({
   showTopLabel,
   topLabel,
   topLabelStyle,
+  isFocused,
+  blurOnSubmit,
 }) {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -74,7 +76,7 @@ function FloatingTextInputIconComponent({
         keyboardType={keyboardType}
         value={value}
         customLabelStyles={[styles.customLabelStyles, customLabelStyles]}
-        isFocused={false}
+        isFocused={isFocused ? isFocused : false}
         editable={editable}
         onMagicTap={onMagicTap}
         underlineColorAndroid={styles.hideUnderline}

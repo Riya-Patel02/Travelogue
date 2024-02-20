@@ -1,16 +1,17 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 import {
   vo,
-  ho, hp,
+  ho,
+  hp,
   FontFamily,
   FontSize,
   spacing,
-  strings
+  strings,
+  wp,
 } from '../../../theme';
 
 export const style = themeMode =>
   StyleSheet.create({
-
     statusBg: themeMode.transparent,
     viewContainer: {
       backgroundColor: themeMode.white,
@@ -26,8 +27,34 @@ export const style = themeMode =>
       fontFamily: FontFamily.bold,
       marginTop: 0,
     },
-  
-    cardContainer:{
-      backgroundColor: themeMode.lightGrey
-    }
+
+    cardContainer: {
+      backgroundColor: themeMode.lightGrey,
+    },
+    errorStyle: {
+      color: 'red',
+      // marginTop: spacing.xxs,
+      paddingLeft: 5,
+      fontFamily: FontFamily.regular,
+      height: 'auto',
+    },
+    btnTitle: {
+      color: themeMode.darkBlueNoTheme,
+      fontFamily: FontFamily.bold,
+      fontSize: FontSize.medium,
+
+      marginTop: 0,
+    },
+    btnStyle: {
+      height: hp(5),
+      width: wp(93),
+      borderRadius: 5,
+      borderColor: themeMode.whiteNoTheme,
+      borderWidth: 1,
+      // margin: spacing.r,
+      marginTop: hp(2),
+
+      backgroundColor: themeMode.orangeNoTheme,
+      boxShadowColor: themeMode.blackNoTheme,
+    },
   });
