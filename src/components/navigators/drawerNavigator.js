@@ -103,7 +103,7 @@ const DrawerNavigator = ({initialRouteName}) => {
       <Drawer.Screen
         name={routeKeys.BOOKINGSTACK}
         children={() => (
-          <TabNavigator initialRouteName={routeKeys.BOOKINGKEY} />
+          <TabNavigator initialRouteName={routeKeys.BOOKINGHISTORYKEY} />
         )}
         options={{
           drawerLabel: strings.bookScreen,

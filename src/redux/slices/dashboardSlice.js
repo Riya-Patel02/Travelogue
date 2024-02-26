@@ -38,8 +38,8 @@ const dashboardSlice = createSlice({
 ///thunk to update existing user
 export const updateUserData = (key, value) => async dispatch => {
   try {
-    console.log(key);
-    console.log('innn', value);
+    // console.log(key);
+    // console.log('innn', value);
     await AsyncStorage.setItem(key, value);
     return true;
   } catch (error) {

@@ -16,7 +16,7 @@ import themes from './src/theme/themes';
 import ResortScreen from './src/screens/dashboardScreens/homeScreen/chipScreens/ResortScreen/resortScreen';
 import MountainScreen from './src/screens/dashboardScreens/homeScreen/chipScreens/MountainScreen/mountainScreen';
 import RecommendedScreen from './src/screens/dashboardScreens/homeScreen/chipScreens/RecommendedScreen/recommendedScreen';
-import DetailsScreen from './src/screens/dashboardScreens/homeScreen/tabScreens/DetailsScreen/detailsScreen';
+import DetailsScreen from './src/screens/dashboardScreens/homeScreen/DetailsScreen/detailsScreen';
 import Beach from './src/screens/dashboardScreens/homeScreen/chipScreens/BeachesScreen/beach';
 import {constants, routeKeys, strings} from './src/theme';
 import ThemeProvider from './src/themeProvider';
@@ -30,6 +30,7 @@ import {selectIsLoggedIn} from './src/redux/slices/authSlice';
 import {PersistGate} from 'redux-persist/integration/react';
 import {AppState} from 'react-native';
 import RNRestart from 'react-native-restart';
+import BookingScreen from './src/screens/dashboardScreens/homeScreen/bookingScreen/bookingScreen';
 
 const Stack = createStackNavigator();
 
@@ -120,6 +121,14 @@ const RootNavigation = () => {
                 headerTitle: '',
               }}
             />
+
+            <Stack.Screen
+              name={routeKeys.BOOKINGKEY}
+              children={BookingScreen}
+              options={{
+                headerTitle: '',
+              }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       }
@@ -177,48 +186,50 @@ const App = ({}) => {
   //   fetchData();
   // }, []);
 
-  
   useEffect(() => {
-    const subscription = AppState.addEventListener('change', async nextAppState => {
-      if (
-        appState.current.match(/inactive|background/) && 
-        nextAppState === 'active'
-      ) {
-        console.log('App has come to the foreground!');
-        // RNRestart.restart();
-      }
-  
-      appState.current = nextAppState;
-      setAppStateVisible(appState.current);
-      console.log('AppState', appState.current);
-  
-      // Fetch data when the app state changes
-      try {
-        const [lang] = await Promise.all([
-          handleAsyncReadData(constants.storageKeys.SAVEDLANGUAGE),
-        ]);
-  
-        // Set language
-        if (lang != null) {
-          console.log('appLang', lang);
-          strings.setLanguage(lang);
-        } else {
-          strings.setLanguage('en'); // Default language
-          console.log('done');
+    const subscription = AppState.addEventListener(
+      'change',
+      async nextAppState => {
+        if (
+          appState.current.match(/inactive|background/) &&
+          nextAppState === 'active'
+        ) {
+          console.log('App has come to the foreground!');
+          // RNRestart.restart();
         }
-  
-        // Set login status
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    });
-  
+
+        appState.current = nextAppState;
+        setAppStateVisible(appState.current);
+        console.log('AppState', appState.current);
+
+        // Fetch data when the app state changes
+        try {
+          const [lang] = await Promise.all([
+            handleAsyncReadData(constants.storageKeys.SAVEDLANGUAGE),
+          ]);
+
+          // Set language
+          if (lang != null) {
+            console.log('appLang', lang);
+            strings.setLanguage(lang);
+          } else {
+            strings.setLanguage('en'); // Default language
+            console.log('done');
+          }
+
+          // Set login status
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      },
+    );
+
     // Cleanup
     return () => {
       subscription.remove();
     };
   }, []);
-  
+
   return (
     <StoreProvider store={reduxStore}>
       <PersistGate persistor={persister} loading={null}>

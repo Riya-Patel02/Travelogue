@@ -17,22 +17,23 @@ import {
   hp,
   iconNames,
   images,
+  routeKeys,
   spacing,
   strings,
   vo,
-} from '../../../theme/index';
+} from '../../../../theme/index';
 
-import useThemedStyles from '../../../services/useThemedStyles';
-import HeaderComponent from '../../../components/headerComponent';
-import IconComponent from '../../../components/iconComponent';
-import TextComponent from '../../../components/textComponent';
-import {FocusAwareStatusBar} from '../../../components/statusbarComponent';
-import ValidationUtils from '../../../utils/validationUtils';
+import useThemedStyles from '../../../../services/useThemedStyles';
+import HeaderComponent from '../../../../components/headerComponent';
+import IconComponent from '../../../../components/iconComponent';
+import TextComponent from '../../../../components/textComponent';
+import {FocusAwareStatusBar} from '../../../../components/statusbarComponent';
+import ValidationUtils from '../../../../utils/validationUtils';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import FloatingTextInputIconComponent from '../../../components/floatingTextInputIconComponent';
+import FloatingTextInputIconComponent from '../../../../components/floatingTextInputIconComponent';
 import DatePicker from '@react-native-community/datetimepicker';
-import ButtonComponent from '../../../components/buttonComponent';
-import CustomRatingsBar from '../../../components/customRatingsBar';
+import ButtonComponent from '../../../../components/buttonComponent';
+import CustomRatingsBar from '../../../../components/customRatingsBar';
 
 const validation = new ValidationUtils();
 
@@ -59,12 +60,15 @@ const BookingBody = ({navigation, selectedCard}) => {
     childrens: 0,
     totalRooms: 1,
     totalDays: 0,
+    totalPrice: '',
   });
 
   const [selectBtn, setSelectBtn] = useState('');
   const [error, setErrors] = useState({});
+  const [btnDisabled, setBtnDisabled] = useState(true);
 
-  ///handle input fields change
+  /// handle input fields change
+
   const handleInputChange = (field, text) => {
     setState(prevState => ({...prevState, [field]: text}));
   };
@@ -86,14 +90,35 @@ const BookingBody = ({navigation, selectedCard}) => {
   };
 
   useEffect(() => {
-    if (state.startDate.timestamp != '' && state.endDate.timestamp != '') {
+    const getDays = () => {
+      if (state.startDate.timestamp != '' && state.endDate.timestamp != '') {
+        const diffTime =
+          new Date(state.endDate.timestamp) -
+          new Date(state.startDate.timestamp);
+        const daysDiff = Math.round(diffTime / (1000 * 3600 * 24));
 
-      const diffTime = new Date(state.endDate.timestamp) - new Date(state.startDate.timestamp) ;
-      const daysDiff =  Math.round(diffTime / (1000 * 3600 * 24));
+        setState(prevState => ({...prevState, totalDays: daysDiff}));
+      }
+    };
 
-      setState(prevState => ({...prevState, totalDays: daysDiff}));
-    }
-  }, [state.startDate, state.endDate]);
+    const getPrice = () => {
+      if (state.totalDays != '' && state.adults != '') {
+        const totalPrice =
+          state.totalRooms *
+          parseInt(selectedCard.details.price.replace(/,/g, ''));
+
+        setState(prevState => ({
+          ...prevState,
+          totalPrice: numberWithCommas(totalPrice),
+        }));
+
+        // console.log('price', totalPrice);
+      }
+    };
+
+    getDays();
+    getPrice();
+  }, [state.startDate, state.endDate, state.adults, state.totalRooms]);
 
   ///function to validate selected date
   const handleDateValidation = date => {
@@ -105,6 +130,7 @@ const BookingBody = ({navigation, selectedCard}) => {
         state.endDate.timestamp < date.nativeEvent.timestamp
       ) {
         setErrors({endDate: 'Invalid End Date'});
+        handleDateChange(date);
       } else if (date.type == 'dismissed' && state.startDate.value == '') {
       } else {
         setErrors({startDate: null});
@@ -116,6 +142,7 @@ const BookingBody = ({navigation, selectedCard}) => {
         state.startDate.timestamp > date.nativeEvent.timestamp
       ) {
         setErrors({endDate: 'Invalid End Date'});
+        handleDateChange(date);
       } else if (date.type == 'dismissed' && state.endDate.value == '') {
       } else {
         setErrors({endDate: null});
@@ -124,12 +151,23 @@ const BookingBody = ({navigation, selectedCard}) => {
     }
   };
 
+  ///function to handle on proceed
+const handleOnProceed=()=>{
+  if(state.adults != '' && state.totalDays != '' && state.totalPrice != '' && error){
+
+  }
+}
+  ///get location state from whole address
   const getState = msg => {
     var state = msg.split(' ');
     return state[state.length - 2];
   };
 
-  console.log(state.totalDays);
+  ///function to convert number string to price
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  // console.log(parseInt(selectedCard.details.price.replace(/,/g, '')));
   return (
     <SafeAreaView>
       <View
@@ -210,21 +248,30 @@ const BookingBody = ({navigation, selectedCard}) => {
                 />
               </View>
 
-              <TextComponent
-                text={selectedCard.details.price + '/Room'}
-                textStyle={{
-                  color: 'black',
-                  fontSize: FontSize.small,
+              <View
+                style={{
+                  flexDirection: 'row',
                   justifyContent: 'flex-start',
-                  alignSelf: 'flex-start',
-                  marginLeft: 3,
-                  marginTop: 0,
-                  fontFamily: FontFamily.bold,
-                }}
-              />
+                  alignItems: 'center',
+                }}>
+                <CustomRatingsBar
+                  isDisabled={true}
+                  ratings={selectedCard.details.ratings}
+                />
+                <TextComponent
+                  text={selectedCard.details.ratings}
+                  textStyle={{
+                    color: 'black',
+                    fontSize: FontSize.small,
+                    padding: 0,
+                    marginTop: 0,
+                    fontFamily: FontFamily.bold,
+                  }}
+                />
+              </View>
             </View>
 
-            <View
+            {/* <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'flex-start',
@@ -244,105 +291,20 @@ const BookingBody = ({navigation, selectedCard}) => {
                   fontFamily: FontFamily.bold,
                 }}
               />
-            </View>
+            </View> */}
+            <TextComponent
+              text={'Price : ' + selectedCard.details.price + '/Room'}
+              textStyle={{
+                color: 'black',
+                fontSize: FontSize.small,
+                justifyContent: 'flex-start',
+                alignSelf: 'flex-start',
+                marginLeft: 3,
+                marginTop: 0,
+                fontFamily: FontFamily.bold,
+              }}
+            />
           </View>
-          {/* <View
-            style={{
-              flexDirection: 'column',
-              marginHorizontal: 20,
-              justifyContent: 'center',
-            }}>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-
-                width: '90%',
-                marginHorizontal: 0,
-              }}>
-              <TextComponent
-                text={selectedCard.name}
-                textStyle={{
-                  color: 'black',
-                  fontSize: FontSize.small,
-                  justifyContent: 'flex-start',
-                  alignSelf: 'flex-start',
-                  marginLeft: 3,
-                }}
-              />
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <Ionicons
-                  name={'star-sharp'}
-                  color={'orange'}
-                  size={20}
-                  style={{
-                    alignSelf: 'center',
-                    marginLeft: 0,
-                  }}
-                />
-                <TextComponent
-                  text={selectedCard.ratings}
-                  textStyle={{
-                    color: 'black',
-                    fontSize: FontSize.small,
-                    padding: 0,
-                    marginTop: 0,
-                    fontFamily: FontFamily.bold,
-                  }}
-                />
-              </View>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                padding: 0,
-                marginTop: 5,
-                width: '90%',
-                justifyContent: 'space-between',
-              }}>
-              <View
-                style={{
-                  flexDirection: 'row',
-                }}>
-                <Ionicons
-                  name={'location-sharp'}
-                  color={'black'}
-                  size={20}
-                  style={{
-                    alignSelf: 'flex-start',
-                    marginLeft: 0,
-                  }}
-                />
-                <TextComponent
-                  text={selectedCard.details.location}
-                  textStyle={{
-                    color: 'black',
-                    fontSize: FontSize.xsmall,
-                    padding: 0,
-                    marginTop: 0,
-                  }}
-                />
-              </View>
-
-              <TextComponent
-                text={selectedCard.details.price}
-                textStyle={{
-                  color: 'black',
-                  fontSize: FontSize.small,
-                  justifyContent: 'flex-start',
-                  alignSelf: 'flex-start',
-                  marginLeft: 3,
-                  marginTop: 0,
-                  fontFamily: FontFamily.bold,
-                }}
-              />
-            </View>
-          </View> */}
         </View>
       </View>
 
@@ -798,7 +760,7 @@ const BookingBody = ({navigation, selectedCard}) => {
           />
 
           <TextComponent
-            text={state.totalRooms * parseInt(selectedCard.details.price,10)}
+            text={state.totalPrice}
             textStyle={{
               marginTop: '0',
               textAlign: 'left',
@@ -816,8 +778,14 @@ const BookingBody = ({navigation, selectedCard}) => {
         }}>
         <ButtonComponent
           btnTitle={'Proceed'}
-          btnStyle={styles.btnStyle}
+          btnStyle={
+            btnDisabled
+              ? [styles.btnStyle, {backgroundColor: 'grey'}]
+              : [styles.btnStyle]
+          }
           btnTitleStyle={styles.btnTitle}
+          isDisabled={btnDisabled}
+          btnOnPress={() => navigation.navigate(routeKeys.BOOKINGDETAILSKEY)}
         />
       </View>
       {dateDialogVisible && (
@@ -843,7 +811,7 @@ const BookingBody = ({navigation, selectedCard}) => {
 const BookingScreen = ({navigation, route}) => {
   const styles = useThemedStyles(style);
   const {selectedCard} = route.params;
-  console.log('routwe', selectedCard);
+
   useEffect(() => {
     navigation.setOptions({
       header: () => (
@@ -866,9 +834,9 @@ const BookingScreen = ({navigation, route}) => {
           headerLeftChildren={
             <IconComponent
               iconColor={styles.whiteIcon}
-              iconName={iconNames.menu}
+              iconName={iconNames.leftArrow}
               iconSize={25}
-              onIconPress={() => navigation.toggleDrawer()}
+              onIconPress={() => navigation.goBack()}
             />
           }
           headerMiddleViewStyle={{

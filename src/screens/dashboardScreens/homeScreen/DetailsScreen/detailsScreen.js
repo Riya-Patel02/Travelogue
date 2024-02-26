@@ -6,23 +6,23 @@ import {
   Text,
   View,
 } from 'react-native';
-import {FocusAwareStatusBar} from '../../../../../components/statusbarComponent';
-import TextComponent from '../../../../../components/textComponent';
-import HeaderComponent from '../../../../../components/headerComponent';
+import { FocusAwareStatusBar } from '../../../../components/statusbarComponent';
+import TextComponent from '../../../../components/textComponent';
+import HeaderComponent from '../../../../components/headerComponent';
 
-import useThemedStyles from '../../../../../services/useThemedStyles';
-import {useFocusEffect, useIsFocused} from '@react-navigation/native';
-import {useCallback, useEffect, useState} from 'react';
+import useThemedStyles from '../../../../services/useThemedStyles';
+import { useFocusEffect, useIsFocused } from '@react-navigation/native';
+import { useCallback, useEffect, useState } from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import {style} from './styles';
-import TopTabNavigator from '../../../../../components/navigators/topTabNavigator';
-import ButtonComponent from '../../../../../components/buttonComponent';
+import { style } from './styles';
+import TopTabNavigator from '../../../../components/navigators/topTabNavigator';
+import ButtonComponent from '../../../../components/buttonComponent';
 import SwiperFlatList from 'react-native-swiper-flatlist';
-import MoreLessTextComponent from '../../../../../components/moreLessText';
+import MoreLessTextComponent from '../../../../components/moreLessText';
 
-import LinearGradientComponent from '../../../../../components/linearGradientComponent';
-import IconComponent from '../../../../../components/iconComponent';
+import LinearGradientComponent from '../../../../components/linearGradientComponent';
+import IconComponent from '../../../../components/iconComponent';
 import {
   constants,
   hp,
@@ -30,13 +30,13 @@ import {
   wp,
   strings,
   routeKeys,
-} from '../../../../../theme';
-import {useDispatch, useSelector} from 'react-redux';
+} from '../../../../theme';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchData,
   selectFavList,
-} from '../../../../../redux/slices/dashboardSlice';
-import {saveAsyncData} from '../../../../../redux/slices/authSlice';
+} from '../../../../redux/slices/dashboardSlice';
+import { saveAsyncData } from '../../../../redux/slices/authSlice';
 
 const {width} = Dimensions.get('window');
 const headerTopMargin = StatusBar.currentHeight;

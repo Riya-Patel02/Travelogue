@@ -70,8 +70,8 @@ export const removeUser = key => async dispatch => {
 // Thunk action to save data asynchronously
 export const saveAsyncData = (key, value) => async dispatch => {
   try {
-    console.log(key);
-    console.log('innn', value);
+    // console.log(key);
+    // console.log('innn', value);
     await AsyncStorage.setItem(key, value);
     // Dispatch action to indicate successful data save if necessary
     dispatch(userSaved(true));

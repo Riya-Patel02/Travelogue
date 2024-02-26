@@ -630,7 +630,6 @@ const SignupScreen = ({navigation}) => {
     const options = {
       quality: 1,
       saveToPhotos: true,
-
       mediaType: 'mixed',
     };
 

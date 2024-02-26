@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
-import dimensions from '../../../../../utils/dimensions';
-import { FontSize, FontFamily, hp, spacing } from '../../../../../theme';
+import dimensions from '../../../../utils/dimensions';
+import { FontSize, FontFamily, hp, spacing } from '../../../../theme';
 
 export const style = themeMode =>
   StyleSheet.create({

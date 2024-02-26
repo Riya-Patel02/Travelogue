@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React, {useContext} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import BookingsScreen from '../../screens/dashboardScreens/bookingScreens.js/bookingScreen';
+import BookingHistoryScreen from '../../screens/dashboardScreens/bookingHistoryScreens.js/bookingHistoryScreen';
 import FavoritesScreen from '../../screens/dashboardScreens/favoritesScreen/favoritesScreen';
 
 import HomeScreen from '../../screens/dashboardScreens/homeScreen/homeScreen';
@@ -41,7 +41,7 @@ const TabNavigator = ({initialRouteName}) => {
             iconName = focused
               ? iconNames.ionicons.heart
               : iconNames.ionicons.heart_outline;
-          } else if (route.name === routeKeys.BOOKINGKEY) {
+          } else if (route.name === routeKeys.BOOKINGHISTORYKEY) {
             iconName = focused
               ? iconNames.ionicons.calender
               : iconNames.ionicons.calender_outline;
@@ -100,8 +100,8 @@ const TabNavigator = ({initialRouteName}) => {
         }}
       />
       <Tab.Screen
-        name={routeKeys.BOOKINGKEY}
-        component={BookingsScreen}
+        name={routeKeys.BOOKINGHISTORYKEY}
+        component={BookingHistoryScreen}
         options={{
           tabBarLabel: strings.bottomTabs.book,
           headerTitle: '',

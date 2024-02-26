@@ -282,7 +282,7 @@ const getFavlist= useSelector(selectFavList)
   };
 
   // console.log('allFav', email);
-  console.log('localFav', favList);
+  // console.log('localFav', favList);
   return (
     <View style={styles.viewContainer}>
       <FocusAwareStatusBar
