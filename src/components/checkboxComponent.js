@@ -53,7 +53,7 @@ const style = themeMode =>
     },
     checkboxStyle: {
       justifyContent: 'flex-start',
-      // padding: dimensions.dp_10,
+  
     },
     checkedColor: themeMode.grey,
 

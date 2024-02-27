@@ -50,7 +50,7 @@ const ShowDetailBody = ({data, cardData}) => {
         height: 'auto',
         marginBottom: 0,
         paddingBottom: 0,
-        // flex: 1,
+     
       }}>
       <View
         style={{

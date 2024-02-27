@@ -36,7 +36,7 @@ export const style = themeMode =>
       fontSize: FontSize.regular,
       marginTop: 0,
       textAlign: 'center',
-      // padding: 2,
+  
       justifyContent: 'flex-start',
       alignItems: 'center',
     },
@@ -52,7 +52,7 @@ export const style = themeMode =>
       margin:0,
       height: hp('8%'),
       borderBottomLeftRadius: 20,
-      // paddingLeft: dimensions.dp_10,
+     
       borderBottomRightRadius: 20,
     },
   });

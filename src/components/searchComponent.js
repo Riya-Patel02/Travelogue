@@ -45,7 +45,6 @@ const SearchComponent = ({
       customLabelStyles={{
         colorFocused: styles.blackText,
         colorBlurred: styles.blackText,
-        
       }}
       placeholder={placeholder}
       leftChildren={
@@ -55,10 +54,7 @@ const SearchComponent = ({
           color={styles.blackText}
         />
       }
-      // onBlur={() => setShowClear(false)}
       onFocus={() => setShowClear(true)}
-      // onBlur={onBlur}
-      // onFocus={onFocus}
       onSubmitEditing={() => setShowClear(false)}
       rightChildren={
         showClear && (
@@ -100,11 +96,11 @@ const style = themeMode =>
       paddingLeft: spacing.xs,
       paddingRight: spacing.xs,
       justifyContent: 'flex-start',
-      // paddingBottom: dimensions.dp_5,
+
       marginBottom: 0,
     },
     blackText: themeMode.blackNoTheme,
-    hintTextColor: themeMode.grey
+    hintTextColor: themeMode.grey,
   });
 
 export default SearchComponent;

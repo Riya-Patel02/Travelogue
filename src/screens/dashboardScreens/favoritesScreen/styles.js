@@ -56,7 +56,7 @@ export const style = themeMode =>
       
       height: hp(8),
       borderBottomLeftRadius: 20,
-      // paddingLeft: dimensions.dp_10,
+     
       borderBottomRightRadius: 20
     },
   });

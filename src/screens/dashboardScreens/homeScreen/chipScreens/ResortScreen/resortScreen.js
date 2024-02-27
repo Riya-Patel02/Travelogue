@@ -191,7 +191,7 @@ const getFavlist= useSelector(selectFavList)
     useCallback(() => {
       console.log('resort foc');
       dispatch(fetchData(constants.storageKeys.FAVLIST));
-      // dispatch(fetchData(constants.storageKeys.demo));
+      
     }, [navigation]),
   );
 
@@ -281,8 +281,7 @@ const getFavlist= useSelector(selectFavList)
     Keyboard.dismiss(), setIsFocused(false); // Clear the text input value
   };
 
-  // console.log('allFav', email);
-  // console.log('localFav', favList);
+ 
   return (
     <View style={styles.viewContainer}>
       <FocusAwareStatusBar

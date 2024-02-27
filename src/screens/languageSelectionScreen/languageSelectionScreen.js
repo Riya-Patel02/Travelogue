@@ -78,7 +78,7 @@ const LanguageSelectionScreen = ({navigation}) => {
           flexDirection: 'row',
 
           justifyContent: 'space-evenly',
-          //   alignSelf: 'center',
+    
           flex: 1,
           marginTop: 10,
         }}>

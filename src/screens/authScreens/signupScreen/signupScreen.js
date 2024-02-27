@@ -91,7 +91,7 @@ const ShowProfileModel = ({isVisible, setVisible, data}) => {
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
-                // marginTop: dimensions.dp_5,
+          
                 padding: spacing.xxs,
               }}>
               <IconComponent

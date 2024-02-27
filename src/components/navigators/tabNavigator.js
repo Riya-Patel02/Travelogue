@@ -1,14 +1,13 @@
 import 'react-native-gesture-handler';
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BookingHistoryScreen from '../../screens/dashboardScreens/bookingHistoryScreens.js/bookingHistoryScreen';
 import FavoritesScreen from '../../screens/dashboardScreens/favoritesScreen/favoritesScreen';
 
 import HomeScreen from '../../screens/dashboardScreens/homeScreen/homeScreen';
 import SettingsScreen from '../../screens/dashboardScreens/settingsScreen/settingsScreen';
 
-// import { useTheme } from '@react-navigation/native';
 import {
   hp,
   routeKeys,
@@ -17,9 +16,8 @@ import {
   FontFamily,
   strings,
 } from '../../theme';
-import {ThemeContext} from '../../themeProvider';
-import Home from '../../screens/dashboardScreens/homeScreen/home';
-import BookedScreens from '../../screens/drawerScreens/bookedScreens';
+import { ThemeContext } from '../../themeProvider';
+import BookingDetailsScreen from '../../screens/dashboardScreens/homeScreen/bookingScreen/bookingDetailsScreen/bookingDetailsScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -101,7 +99,7 @@ const TabNavigator = ({initialRouteName}) => {
       />
       <Tab.Screen
         name={routeKeys.BOOKINGHISTORYKEY}
-        component={BookingHistoryScreen}
+        component={BookingDetailsScreen}
         options={{
           tabBarLabel: strings.bottomTabs.book,
           headerTitle: '',

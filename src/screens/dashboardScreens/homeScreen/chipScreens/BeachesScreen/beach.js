@@ -158,7 +158,7 @@ const SearchBody = ({navigation}) => {
   const [favList, setFavList] = useState([]);
 
   const [searchVal, setSearchVal] = useState('');
-  // const [isFocused, setIsFocused] = useState(false);
+
   const [isLoading, setIsLoading] = useState(false);
   const [filteredList, setFilteredList] = useState([]);
   const [isDataVisible, setIsDataVisible] = useState(true);

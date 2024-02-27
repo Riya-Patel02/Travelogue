@@ -33,7 +33,7 @@ export const style = themeMode =>
     },
     errorStyle: {
       color: 'red',
-      // marginTop: spacing.xxs,
+   
       paddingLeft: 5,
       fontFamily: FontFamily.regular,
       height: 'auto',
@@ -51,7 +51,7 @@ export const style = themeMode =>
       borderRadius: 5,
       borderColor: themeMode.whiteNoTheme,
       borderWidth: 1,
-      // margin: spacing.r,
+    
       marginTop: hp(5),
 
       backgroundColor: themeMode.orangeNoTheme,

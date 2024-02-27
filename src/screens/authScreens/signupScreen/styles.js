@@ -14,13 +14,10 @@ import {
 export const style = themeMode =>
   StyleSheet.create({
     bodyContainer: {
-      // flex: 1,
-      // height: 'auto',
-
-      // margin: spacing.m,
+     
+     
       elevation: 4,
-      // paddingBottom: 0,
-      // marginBottom: 5,
+     
       flex: 1,
       backgroundColor: themeMode.whiteNoTheme,
     },

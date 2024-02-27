@@ -86,10 +86,7 @@ export const style = themeMode =>
     },
 
     cardTitleBg: {
-      // padding: 5,
-      // borderTopWidth: 1,
-      // borderBottomWidth: 1,
-      // backgroundColor: themeMode.lightPurple,
+     
     },
     cardSubTitle: {
       color: themeMode.whiteNoTheme,

@@ -50,13 +50,7 @@ const SettingsBody = ({navigation}) => {
       console.log('failed to load the sound', error);
       return;
     }
-    // if loaded successfully
-    // console.log(
-    //   'duration in seconds: ' +
-    //     tune.getDuration() +
-    //     'number of channels: ' +
-    //     tune.getNumberOfChannels(),
-    // );
+
   });
 
   const settingsData = [
@@ -90,7 +84,7 @@ const SettingsBody = ({navigation}) => {
 
   const handleSwitchTheme = () => {
     setIsEnabled(!isEnabled);
-    // const newTheme = theme.dark === true ? 'dark' : 'light';
+   
 
     toggleTheme(theme.dark);
   };
@@ -231,7 +225,7 @@ const SettingsBody = ({navigation}) => {
             color={styles.whiteIcon}
             hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}
             iconViewStyle={{
-              // backgroundColor:'red',
+        
               padding: spacing.xs,
             }}
             onIconPress={() => {

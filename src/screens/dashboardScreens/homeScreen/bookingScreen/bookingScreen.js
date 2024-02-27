@@ -112,6 +112,9 @@ const BookingBody = ({navigation, selectedCard}) => {
           totalPrice: numberWithCommas(totalPrice),
         }));
 
+
+        setBtnDisabled(false)
+
         // console.log('price', totalPrice);
       }
     };
@@ -154,6 +157,7 @@ const BookingBody = ({navigation, selectedCard}) => {
   ///function to handle on proceed
 const handleOnProceed=()=>{
   if(state.adults != '' && state.totalDays != '' && state.totalPrice != '' && error){
+    navigation.navigate(routeKeys.BOOKINGDETAILSKEY)
 
   }
 }
@@ -271,27 +275,7 @@ const handleOnProceed=()=>{
               </View>
             </View>
 
-            {/* <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'flex-start',
-                alignItems: 'center',
-              }}>
-              <CustomRatingsBar
-                isDisabled={true}
-                ratings={selectedCard.details.ratings}
-              />
-              <TextComponent
-                text={selectedCard.details.ratings}
-                textStyle={{
-                  color: 'black',
-                  fontSize: FontSize.small,
-                  padding: 0,
-                  marginTop: 0,
-                  fontFamily: FontFamily.bold,
-                }}
-              />
-            </View> */}
+       
             <TextComponent
               text={'Price : ' + selectedCard.details.price + '/Room'}
               textStyle={{
@@ -320,7 +304,7 @@ const handleOnProceed=()=>{
             height: hp(9),
             width: '40%',
             borderBottomWidth: 0,
-            // justifyContent: 'center',
+      
             borderRadius: 5,
           }}>
           <FloatingTextInputIconComponent
@@ -367,7 +351,7 @@ const handleOnProceed=()=>{
                   justifyContent: 'center',
                   marginTop: 15,
                   alignSelf: 'center',
-                  // backgroundColor: 'red',
+                
                 }}
                 onIconPress={() => {
                   if (state.startDate.timestamp != '') {
@@ -785,7 +769,7 @@ const handleOnProceed=()=>{
           }
           btnTitleStyle={styles.btnTitle}
           isDisabled={btnDisabled}
-          btnOnPress={() => navigation.navigate(routeKeys.BOOKINGDETAILSKEY)}
+          btnOnPress={() => handleOnProceed()}
         />
       </View>
       {dateDialogVisible && (

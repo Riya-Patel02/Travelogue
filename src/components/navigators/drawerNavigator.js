@@ -71,7 +71,7 @@ const DrawerNavigator = ({initialRouteName}) => {
             marginLeft: 0,
             lineHeight: 25,
             height: hp(5),
-            // backgroundColor:'red'
+        
           },
           drawerStyle: {
             backgroundColor: theme.colors.purple200,

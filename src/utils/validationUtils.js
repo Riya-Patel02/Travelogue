@@ -82,18 +82,7 @@ class ValidationUtils {
     }
   };
 
-  // ValidateContact = ({contact, bool}) => {
-  //   console.log(`bool is :${bool}`);
-  //   if (!contact) {
-  //     this.setErrors({contact: strings.errors.contactErr});
-  //     return false;
-  //   } else if (contact.match(strings.regex.mobileRegex) == null) {
-  //     this.setErrors({contact: 'Invalid Contact'});
-  //   } else {
-  //     this.setErrors({contact: null});
-  //     return true;
-  //   }
-  // };
+ 
 
   ///function to validate confirm password
   ValidateConfirmPass = ({confirmPass, pass}) => {
