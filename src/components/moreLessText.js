@@ -1,11 +1,7 @@
-// import React from 'react';
-// import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-
-import {ScrollView, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text} from 'react-native';
 import useThemedStyles from '../services/useThemedStyles';
 import {useState} from 'react';
 import {FontFamily, FontSize} from '../utils/typography';
-import TextComponent from './textComponent';
 
 const MoreLessTextComponent = ({
   data,

@@ -126,7 +126,7 @@ const HomeScreenBody = ({navigation}) => {
     setTimeout(
       () =>
         searchUserAuthData(currentUser.email).then(res =>
-          // console.log('inres',...res),
+       
           dispatch(
             saveAsyncData(
               constants.storageKeys.CURRENTUSER,
@@ -193,23 +193,7 @@ const HomeScreenBody = ({navigation}) => {
     }
   };
 
-  const handleApiCall = async () => {
-    console.log('in api');
-
-    if (getApiData != null) {
-      // console.log('aapi', getApiData);
-      const parsedData = getApiData;
-      if (parsedData.total_users % 10 === 0) {
-        setLastPage(parsedData.total_users / 10);
-      } else {
-        setLastPage(parsedData.total_users / 10 + 1);
-      }
-
-      setUserApiData([...parsedData.users]);
-
-      setIsDataLoading(false);
-    }
-  };
+ 
 
   // const fetchMoreData = async () => {
   //   console.log('in fetch');
@@ -376,15 +360,12 @@ const HomeScreenBody = ({navigation}) => {
               contentContainerStyle={{
                 marginTop: 5,
                 flexGrow: 1,
-                // backgroundColor: 'red',
+            
               }}
               itemSeparator={() => <View />}
               // onEndReachedThreshold={0.5}
               onEndReached={null}
-              onScrollBeginDrag={() => {
-                // stopFetchMore = false;
-                // console.log('scroll');
-              }}
+             
               pagingEnabled={true}
               ListFooterComponent={() =>
                 isFetchingMoreData && <ListFooterComponent />
@@ -529,31 +510,7 @@ const HomeScreen = ({route, navigation}) => {
         translucent={true}
       />
 
-      {/* <SearchComponent
-        searchVal={searchVal}
-        setSearchVal={setSearchVal}
-        isFocused={isFocused}
-        setIsFocused={setIsFocused}
-        placeholder={'Search Destinations'}
-      /> */}
-      {/* <ScrollView
-        showsVerticalScrollIndicator={false}
-        onScroll={({nativeEvent}) => {
-          if (isCloseToBottom(nativeEvent)) {
-            console.log('at end close');
-          }
-        }}
-        onScrollBeginDrag={() => {
-          // console.log('scrolled');
-        }}
-        contentContainerStyle={styles.scrollContentStyle}>
-        {/* <ChipComponent
-          currentIndex={chipsIndex}
-          chipData={chipData}
-          onPress={handleChipSelection}
-      /> */}
-      {/* <HomeScreenBody navigation={navigation} currentIndex={chipsIndex} />
-      </ScrollView> */}
+    
 
       <HomeScreenBody navigation={navigation} />
     </View>

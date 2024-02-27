@@ -13,8 +13,7 @@ import {
 export const style = themeMode =>
   StyleSheet.create({
     bodyContainer: {
-      // flex: 1,
-      // backgroundColor: 'red',
+    
     },
     container: {
       flex: 1,
@@ -30,12 +29,11 @@ export const style = themeMode =>
     cardBg: {
       justifyContent: 'space-evenly',
       flexDirection: 'row',
-      //   width: '100%',
+  
       height: hp(7),
       alignItems: 'center',
       alignSelf: 'flex-start',
-      //   backgroundColor: themeMode.headerGradient,
-      //   padding: 5,
+  
       borderRadius: 10,
     },
 

@@ -43,8 +43,7 @@ export const style = themeMode =>
       padding: 0,
       alignSelf: 'center',
       margin: 0,
-      // backgroundColor:'red'
-      // backgroundColor: themeMode.white,
+     
     },
     textContainer: {
       paddingVertical: 0,
@@ -59,7 +58,7 @@ export const style = themeMode =>
       color: themeMode.red,
       marginTop: spacing.xxs,
       paddingBottom: 0,
-      // marginLeft: spacing.r,
+   
       paddingLeft: 2,
       fontFamily: strings.fontFamily,
     },
@@ -229,7 +228,7 @@ export const style = themeMode =>
     containerStyle: {
       borderWidth: 1,
       borderColor: themeMode.black,
-      // height: hp(5.5),
+    
     },
     customLabelStyles: {
       colorFocused: themeMode.black,

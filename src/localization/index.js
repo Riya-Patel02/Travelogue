@@ -7,19 +7,6 @@ let strings = new LocalizedStrings(resources);
 
 
 
-// i18n.use(initReactI18next).init({
-//   lng: en,
-//   fallbackLng: en,
-//   debug: true,
-//   interpolation: {
-//     escapeValue: false,
-//   },
-//   compatibilityJSON: 'v3',
-//   resources
-// });
-
-// export {i18n as strings};
-
 import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
 

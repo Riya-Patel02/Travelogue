@@ -1,10 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   handleAsyncReadData,
   handleRemoveAsyncData,
 } from '../../services/storeAsyncData';
-import { constants } from '../../theme';
+import {constants} from '../../theme';
 
 const initialState = {
   isLoggedIn: false,
@@ -58,10 +58,8 @@ export const removeUser = key => async dispatch => {
   try {
     const item = await handleRemoveAsyncData(key);
 
-    // dispatch(item)
-    console.log(item)
+  
     return true;
-    // dispatch(item);
   } catch (error) {
     console.error('Error removing user:', error);
   }
@@ -70,8 +68,6 @@ export const removeUser = key => async dispatch => {
 // Thunk action to save data asynchronously
 export const saveAsyncData = (key, value) => async dispatch => {
   try {
-    console.log(key);
-    console.log('innn', value);
     await AsyncStorage.setItem(key, value);
     // Dispatch action to indicate successful data save if necessary
     dispatch(userSaved(true));
@@ -97,7 +93,7 @@ export const fetchData = key => async dispatch => {
     } else if (key === constants.storageKeys.STOREDATA) {
       dispatch(setAllUsers(item));
     } else if (key === constants.storageKeys.demo) {
-      console.log('dd', item);
+    
       dispatch(setFav(item));
     }
   } catch (error) {
@@ -113,8 +109,7 @@ export const userSaved = isSaved => ({
 ///thunk to update existing user
 export const updateUserData = (key, value) => async dispatch => {
   try {
-    console.log(key);
-    console.log('innn', value);
+   
     await AsyncStorage.setItem(key, value);
     return true;
   } catch (error) {

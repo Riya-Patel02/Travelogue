@@ -20,7 +20,7 @@ const ThemeProvider = ({children}) => {
   useEffect(() => {
     const getTheme = async () => {
       try {
-        console.log('in theme');
+     
         const savedTheme = await handleAsyncReadData(
           constants.storageKeys.SAVEDTHEME,
         );
@@ -50,7 +50,7 @@ const ThemeProvider = ({children}) => {
   }, [systemTheme]);
 
   const toggleTheme = isDark => {
-    console.log('toggle', isDark);
+  
     const newTheme = isDark ? themes.light : themes.dark;
     setTheme(prevTheme => newTheme);
     handleAsyncSaveData(constants.storageKeys.SAVEDTHEME, newTheme);

@@ -13,10 +13,14 @@ const ButtonComponent = ({
   btnIconName,
   btnIconSize,
   btnIconColor,
+  isDisabled,
 }) => {
   const styles = useThemedStyles(style);
   return (
-    <TouchableOpacity onPress={btnOnPress} style={[styles.btnStyle, btnStyle]}>
+    <TouchableOpacity
+      onPress={btnOnPress}
+      style={[styles.btnStyle, btnStyle]}
+      disabled={isDisabled}>
       <View
         style={{
           flexDirection: 'row',
@@ -45,7 +49,7 @@ const style = themeMode =>
       borderColor: themeMode.white,
 
       justifyContent: 'center',
-      alignItems: 'center',
+
       borderRadius: 10,
       paddingHorizontal: 0,
       shadowColor: themeMode.black,

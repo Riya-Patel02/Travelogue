@@ -43,6 +43,8 @@ function FloatingTextInputIconComponent({
   showTopLabel,
   topLabel,
   topLabelStyle,
+  isFocused,
+  blurOnSubmit,
 }) {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -74,7 +76,7 @@ function FloatingTextInputIconComponent({
         keyboardType={keyboardType}
         value={value}
         customLabelStyles={[styles.customLabelStyles, customLabelStyles]}
-        isFocused={false}
+        isFocused={isFocused ? isFocused : false}
         editable={editable}
         onMagicTap={onMagicTap}
         underlineColorAndroid={styles.hideUnderline}
@@ -143,7 +145,7 @@ const style = themeMode =>
       fontSize: FontSize.small,
       textDecorationLine: 'none',
       textDecorationColor: themeMode.transparent,
-      // lineHeight: 22,
+     
       fontFamily: FontFamily.regular,
       justifyContent: 'flex-start',
       textAlign: 'left',
@@ -153,17 +155,17 @@ const style = themeMode =>
       marginTop: spacing.xxs,
       paddingBottom: 0,
 
-      // flex: 1,
+
     },
     containerStyle: {
-      // margin: sizeDimensions.dp_10,
+     
       borderRadius: 5,
       borderColor: themeMode.blackText,
       borderBottomWidth: 1,
       paddingHorizontal: 0,
       padding: 0,
       alignItems: 'center',
-      // backgroundColor:'red',
+
       height: 'auto',
     },
     errorStyle: {
@@ -197,7 +199,7 @@ const style = themeMode =>
       fontSize: FontSize.small,
       color: themeMode.black,
       fontFamily: FontFamily.bold,
-      // height: hp(3),
+   
       textAlign: 'left',
       alignItems: 'center',
       lineHeight: 24,

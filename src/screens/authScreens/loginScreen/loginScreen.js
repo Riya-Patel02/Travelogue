@@ -62,7 +62,7 @@ const LoginBody = ({navigation}) => {
 
   useFocusEffect(
     useCallback(() => {
-      console.log('focused');
+   
       dispatch(fetchData(constants.storageKeys.REMEMBERUSER));
       // dispatch(fetchData(constants.storageKeys.STOREDATA));
       getUserAuthData()
@@ -76,7 +76,7 @@ const LoginBody = ({navigation}) => {
       );
 
       return () => {
-        console.log('unfocused');
+       
         setErrors({});
         setState({userObj: {}});
         setLoginError('');
@@ -186,7 +186,7 @@ const LoginBody = ({navigation}) => {
     });
   };
 
-  console.log('ddd', udata);
+  
 
   return (
     <View

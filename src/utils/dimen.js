@@ -58,15 +58,7 @@ const scaleVertical = screenHeight / 812;
   return PixelRatio.roundToNearestPixel((screenHeight * elemHeight) / 100);
 };
 
-// ///function to check potrait orientation
-// const isPotrait = () => {
-//   return screenHeight >= screenWidth;
-// };
 
-// ///function to check potrait orientation
-// const isLandscape = () => {
-//   return screenWidth >= screenHeight;
-// };
 
 export {
   heightPercentageToDP,

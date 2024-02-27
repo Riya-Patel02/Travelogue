@@ -1,16 +1,8 @@
-import { StyleSheet } from 'react-native';
-import {
-  vo,
-  ho, hp,
-  FontFamily,
-  FontSize,
-  spacing,
-  strings
-} from '../../../theme';
+import {StyleSheet} from 'react-native';
+import {FontFamily, FontSize} from '../../../../../theme';
 
-export const style = themeMode =>
+const style = themeMode =>
   StyleSheet.create({
-
     statusBg: themeMode.transparent,
     viewContainer: {
       backgroundColor: themeMode.white,
@@ -26,8 +18,8 @@ export const style = themeMode =>
       fontFamily: FontFamily.bold,
       marginTop: 0,
     },
-  
-    cardContainer:{
-      backgroundColor: themeMode.lightGrey
-    }
+
+    cardContainer: {
+      backgroundColor: themeMode.lightGrey,
+    },
   });

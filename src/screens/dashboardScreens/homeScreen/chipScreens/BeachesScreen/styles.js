@@ -35,7 +35,7 @@ export const style = themeMode =>
       fontSize: FontSize.regular,
       marginTop: 0,
       textAlign: 'center',
-      // padding: 2,
+  
       justifyContent: 'flex-start',
       alignItems: 'center',
     },

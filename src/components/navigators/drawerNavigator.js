@@ -71,7 +71,7 @@ const DrawerNavigator = ({initialRouteName}) => {
             marginLeft: 0,
             lineHeight: 25,
             height: hp(5),
-            // backgroundColor:'red'
+        
           },
           drawerStyle: {
             backgroundColor: theme.colors.purple200,
@@ -103,7 +103,7 @@ const DrawerNavigator = ({initialRouteName}) => {
       <Drawer.Screen
         name={routeKeys.BOOKINGSTACK}
         children={() => (
-          <TabNavigator initialRouteName={routeKeys.BOOKINGKEY} />
+          <TabNavigator initialRouteName={routeKeys.BOOKINGHISTORYKEY} />
         )}
         options={{
           drawerLabel: strings.bookScreen,

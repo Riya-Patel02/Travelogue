@@ -4,7 +4,7 @@ const routeKeys = {
   HOMEKEY: 'homeScreen',
   TESTKEY: 'testScreen',
   PROFILEKEY: 'profileScreen',
-  BOOKINGKEY: 'bookingScreen',
+  BOOKINGHISTORYKEY: 'bookingHistoryScreen',
   BOOKEDKEY: 'bookedScreens',
   SETTINGSKEY: 'settingsScreen',
   FAVORITESKEY: 'favoritesScreen',
@@ -21,14 +21,14 @@ const routeKeys = {
   TAB3: 'tab3',
   TAB4: 'tab4',
   DETAILSSCREEN: 'detailsScreen',
-  LANGUAGESELECTION:'languageSelection',
-  LOADINGSCREEN:'loadingScreen',
+  LANGUAGESELECTION: 'languageSelection',
+  BOOKINGKEY: 'bookingScreen',
+  BOOKINGDETAILSKEY: 'bookingDetailsScreen',
 
-  settings:{
-    LANGUAGESCREEN:"languageScreen",
-    NOTIFICATIONSCREEN:"notificationScreen"
-  }
-
+  settings: {
+    LANGUAGESCREEN: 'languageScreen',
+    NOTIFICATIONSCREEN: 'notificationScreen',
+  },
 };
 
 export {routeKeys};

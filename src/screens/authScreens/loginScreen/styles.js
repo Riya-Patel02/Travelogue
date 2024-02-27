@@ -6,17 +6,14 @@ const style = themeMode =>
     viewContainer: {
       backgroundColor: themeMode.whiteNoTheme,
       height: 'auto',
-      // margin: spacing.m,
-      // marginBottom: 0,
-      // marginTop: hp(5),
-      // padding: spacing.xxs,
+     
       elevation: 4,
     },
     rowContainer: {
       flexDirection: 'row',
       marginTop: spacing.xs,
       paddingHorizontal: spacing.s,
-      // justifyContent: 'flex-start',
+ 
       alignSelf: 'center',
       width: '100%',
 
@@ -25,7 +22,7 @@ const style = themeMode =>
     forgotPass: {
       color: themeMode.darkBlueNoTheme,
       marginTop: 0,
-      // width: wp('40%'),
+    
       flex: 1,
       textDecorationLine: 'none',
       fontSize: FontSize.xsmall,
@@ -39,7 +36,7 @@ const style = themeMode =>
       color: themeMode.darkBlueNoTheme,
       fontSize: FontSize.xsmall,
       marginTop: 0,
-      // paddingLeft: spacing.xxs,
+     
       justifyContent: 'flex-start',
       textAlign: 'left',
       alignContent: 'center',
