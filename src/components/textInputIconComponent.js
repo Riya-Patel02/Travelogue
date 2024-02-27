@@ -112,8 +112,7 @@ function TextInputIconComponent({
         <View>
           <View
             style={{
-              // borderBottomWidth: 0.5,
-              // borderBottomColor: colors.borderGrey,
+              
               borderColor: appColors.darkGrey,
               borderWidth: sizeDimensions.dp_1,
               marginTop: sizeDimensions.dp_5,

@@ -6,29 +6,37 @@ import {
   Text,
   View,
 } from 'react-native';
-import { FocusAwareStatusBar } from '../../../../../components/statusbarComponent';
-import TextComponent from '../../../../../components/textComponent';
-import HeaderComponent from '../../../../../components/headerComponent';
+import { FocusAwareStatusBar } from '../../../../components/statusbarComponent';
+import TextComponent from '../../../../components/textComponent';
+import HeaderComponent from '../../../../components/headerComponent';
 
-import useThemedStyles from '../../../../../services/useThemedStyles';
+import useThemedStyles from '../../../../services/useThemedStyles';
 import { useFocusEffect, useIsFocused } from '@react-navigation/native';
 import { useCallback, useEffect, useState } from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { style } from './styles';
-import TopTabNavigator from '../../../../../components/navigators/topTabNavigator';
-import ButtonComponent from '../../../../../components/buttonComponent';
+import TopTabNavigator from '../../../../components/navigators/topTabNavigator';
+import ButtonComponent from '../../../../components/buttonComponent';
 import SwiperFlatList from 'react-native-swiper-flatlist';
-import MoreLessTextComponent from '../../../../../components/moreLessText';
+import MoreLessTextComponent from '../../../../components/moreLessText';
 
-import LinearGradientComponent from '../../../../../components/linearGradientComponent';
-import IconComponent from '../../../../../components/iconComponent';
-import { constants, hp, iconNames, wp, strings } from '../../../../../theme';
+import LinearGradientComponent from '../../../../components/linearGradientComponent';
+import IconComponent from '../../../../components/iconComponent';
+import {
+  constants,
+  hp,
+  iconNames,
+  wp,
+  strings,
+  routeKeys,
+} from '../../../../theme';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  fetchData, selectFavList
-} from '../../../../../redux/slices/dashboardSlice';
-import { saveAsyncData } from '../../../../../redux/slices/authSlice';
+  fetchData,
+  selectFavList,
+} from '../../../../redux/slices/dashboardSlice';
+import { saveAsyncData } from '../../../../redux/slices/authSlice';
 
 const {width} = Dimensions.get('window');
 const headerTopMargin = StatusBar.currentHeight;
@@ -42,7 +50,7 @@ const ShowDetailBody = ({data, cardData}) => {
         height: 'auto',
         marginBottom: 0,
         paddingBottom: 0,
-        // flex: 1,
+     
       }}>
       <View
         style={{
@@ -106,7 +114,7 @@ const ShowDetailBody = ({data, cardData}) => {
   );
 };
 
-const ShowDetailFooter = ({selectedCard}) => {
+const ShowDetailFooter = ({selectedCard, navigation}) => {
   const styles = useThemedStyles(style);
   return (
     <View
@@ -149,6 +157,11 @@ const ShowDetailFooter = ({selectedCard}) => {
               btnTitle={strings.bookResorts}
               btnStyle={styles.btnStyle}
               btnTitleStyle={styles.btnTitle}
+              btnOnPress={() =>
+                navigation.navigate(routeKeys.BOOKINGKEY, {
+                  selectedCard: selectedCard,
+                })
+              }
             />
           </View>
         }
@@ -295,7 +308,7 @@ const DetailsScreen = ({route, navigation}) => {
         </View>
 
         <>
-          <ShowDetailFooter selectedCard={selectedCard} />
+          <ShowDetailFooter selectedCard={selectedCard} navigation={navigation} />
         </>
       </ScrollView>
     </View>

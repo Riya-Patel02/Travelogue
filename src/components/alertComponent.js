@@ -45,11 +45,7 @@ const AlertComponent = ({
               iconName={iconNames.notifications}
               iconSize={25}
               iconColor={'black'} />
-              // <Image
-              //   source={require('./images/ic_notification.png')}
-              //   resizeMode={'contain'}
-              //   style={styles.alertIconStyle}
-              // />
+              
             )}
             <Text style={styles.alertTitleTextStyle}>
               {`${alertTitleText}`}
@@ -103,8 +99,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#404040',
-    // borderWidth: 2,
-    // borderColor: '#FF0000',
+   
     borderRadius: 10,
     padding: 4,
   },
@@ -113,16 +108,14 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
-    // borderWidth: 1,
-    // borderColor: '#00FF00',
+  
     paddingHorizontal: 2,
     paddingVertical: 4,
   },
   middlePart: {
     flex: 1,
     width: '100%',
-    // borderWidth: 1,
-    // borderColor: '#FF6600',
+  
     padding: 4,
     color: '#FFFFFF',
     fontSize: 16,
@@ -131,15 +124,13 @@ const styles = StyleSheet.create({
   bottomPart: {
     flex: 0.5,
     width: '100%',
-    // borderWidth: 1,
-    // borderColor: '#0066FF',
+  
     flexDirection: 'row',
     padding: 4,
     justifyContent: 'space-evenly',
   },
   alertIconStyle: {
-    // borderWidth: 1,
-    // borderColor: '#cc00cc',
+   
     height: 35,
     width: 35,
   },
@@ -149,8 +140,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'bold',
-    // borderWidth: 1,
-    // borderColor: '#660066',
+
     padding: 2,
     marginHorizontal: 2,
   },

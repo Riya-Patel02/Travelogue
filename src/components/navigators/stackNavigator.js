@@ -37,14 +37,14 @@ export const FavoritesStackNavigator = () => {
 export const BookingStackNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName={routeKeys.BOOKINGKEY}
+      initialRouteName={routeKeys.BOOKINGHISTORYKEY}
       screenOptions={{
         headerShown: false,
       }}>
       <Stack.Screen
         name={routeKeys.BOOKINGSTACK}
         children={() => (
-          <TabNavigator initialRouteName={routeKeys.BOOKINGKEY} />
+          <TabNavigator initialRouteName={routeKeys.BOOKINGHISTORYKEY} />
         )}
       />
     </Stack.Navigator>

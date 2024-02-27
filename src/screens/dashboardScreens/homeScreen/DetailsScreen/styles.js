@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
-import dimensions from '../../../../../utils/dimensions';
-import { FontSize, FontFamily, hp, spacing } from '../../../../../theme';
+import dimensions from '../../../../utils/dimensions';
+import { FontSize, FontFamily, hp, spacing } from '../../../../theme';
 
 export const style = themeMode =>
   StyleSheet.create({
@@ -57,13 +57,13 @@ export const style = themeMode =>
       borderBottomRightRadius: spacing.m,
     },
     btnStyle: {
-      // height:hp(8),
+   
       width: '50%',
       borderRadius: 20,
       borderColor: themeMode.whiteNoTheme,
       borderWidth: 1,
       elevation: 0,
-      // padding: 5,
+   
       marginTop: 0,
      
       backgroundColor: themeMode.orangeNoTheme,
@@ -80,7 +80,7 @@ export const style = themeMode =>
       fontSize: FontSize.regular,
       lineHeight: dimensions.dp_18,
       marginTop: 0,
-      // padding:5,
+     
       margin:0,
       marginBottom:0,
     

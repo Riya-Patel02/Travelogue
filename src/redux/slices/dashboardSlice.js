@@ -9,7 +9,7 @@ const initialState = {
 };
 
 const dashboardSlice = createSlice({
-  //   name: constants.sliceTokens.USERDASHBOARD,
+  
   name: 'userDashboard',
   initialState,
 
@@ -38,8 +38,7 @@ const dashboardSlice = createSlice({
 ///thunk to update existing user
 export const updateUserData = (key, value) => async dispatch => {
   try {
-    console.log(key);
-    console.log('innn', value);
+
     await AsyncStorage.setItem(key, value);
     return true;
   } catch (error) {
@@ -69,7 +68,7 @@ export const fetchData = key => async dispatch => {
 
 export const pushApiData = apiData => async dispatch => {
   try {
-    // console.log('api',apiData)
+  
     if (apiData != null) {
       dispatch(setApiData(apiData));
     }

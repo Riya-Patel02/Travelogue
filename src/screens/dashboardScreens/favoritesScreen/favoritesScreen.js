@@ -54,11 +54,11 @@ const FavoriteBody = ({data, favList, setFavList, navigation}) => {
     );
   };
 
-  console.log(favList);
+
   return (
     <View
       style={{
-        // marginHorizontal: 10,
+     
         marginTop: hp('2%'),
         width: '100%',
       }}>
@@ -80,7 +80,7 @@ const FavoriteBody = ({data, favList, setFavList, navigation}) => {
         ListEmptyComponent={() => (
           <View
             style={{
-              // backgroundColor: 'red',
+           
               justifyContent: 'center',
               height: hp(100) * 0.7,
               flex: 1,
@@ -273,8 +273,7 @@ const FavoritesScreen = ({navigation}) => {
               padding={5}
               marginHorizontal={5}
               backgroundColor={'#adadad'}
-              // marginTop={5}
-              // borderWidth={1}
+            
               borderColor={'#adadad'}
               marginBottom={0}
               borderRadius={10}>

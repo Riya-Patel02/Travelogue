@@ -19,6 +19,7 @@ export const getUserApiData = async offset => {
 ///get user auth data from api
 export const getUserAuthData = async () => {
   const finalUrl = `${BaseUrls.AUTHBASEURL}/vHjyLY/data`;
+ 
   controller.config.method = 'GET';
   try {
     const response = await controller.getAxios(finalUrl);

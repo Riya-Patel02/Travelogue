@@ -9,7 +9,7 @@ import {
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { style } from './styles';
-// import Modal from 'react-native-modal';
+
 
 import {
   constants,
@@ -59,7 +59,7 @@ const ShowProfileModel = ({isVisible, setVisible, data}) => {
     isVisible && (
       <View
         style={{
-          // marginTop: '20%',
+        
           position: 'absolute',
           width: '100%',
           bottom: 0,
@@ -71,7 +71,7 @@ const ShowProfileModel = ({isVisible, setVisible, data}) => {
           onBackdropPress={() => setVisible(false)}
           transparent={true}
           onAccessibilityTap={() => console.log('pressed')}
-          // hitSlop={{top: 10, bottom: 10, left: 0, right: 0}}
+         
           style={{
             bottom: 0,
             position: 'absolute',
@@ -81,8 +81,7 @@ const ShowProfileModel = ({isVisible, setVisible, data}) => {
             marginBottom: 0,
             marginTop: spacing.xs,
             height: 0,
-            // width: '100%',
-            // height: '20%',
+           
           }}>
           <View style={styles.modalView}>
             <View
@@ -261,12 +260,7 @@ const ProfileBody = ({navigation}) => {
       case 'dob':
         validation.ValidateDob({dob: fieldValue});
         break;
-      // case 'contact':
-      //   validation.ValidateContact({
-      //     contact: contact,
-      //     countryCode: state.countryCode,
-      //   });
-      //   break;
+      
       case 'confirmPass':
         validation.ValidateConfirmPass({
           confirmPass: fieldValue,
@@ -333,7 +327,7 @@ const ProfileBody = ({navigation}) => {
           return;
         }
 
-        // console.log(response.assets.entries());
+
         for (var items in response) {
           const resArr = response[items];
           for (var i in resArr) {
@@ -391,10 +385,7 @@ const ProfileBody = ({navigation}) => {
     const validatedFname = validation.ValidateFName({fname: state.firstName});
     const validatedLname = validation.ValidateLName({lname: state.lastName});
     const validatedEmail = validation.ValidateEmail({email: state.email});
-    // const validatedContact = validation.ValidateContact({
-    //   contact: state.contact,
-    //   countryCode: state.countryCode,
-    // });
+   
     const validatedPassword = validation.ValidatePassword({
       password: state.password,
     });
@@ -434,12 +425,7 @@ const ProfileBody = ({navigation}) => {
         console.log('update res', res),
       );
 
-      // dispatch(
-      //   saveAsyncData(
-      //     constants.storageKeys.STOREDATA,
-      //     JSON.stringify(allUsers),
-      //   ),
-      // );
+      
 
       setTimeout(() => setSaveSuccess(false), 1000);
 
@@ -460,7 +446,7 @@ const ProfileBody = ({navigation}) => {
   return (
     <View
       style={{
-        // flex: 1,
+    
         paddingBottom: 0,
         borderWidth: 0,
         marginBottom: 0,
@@ -479,7 +465,7 @@ const ProfileBody = ({navigation}) => {
             marginTop: spacing.xs,
             marginBottom: spacing.r,
           }}
-          // onPress={() => showImageModal()}>
+        
           onPress={() => setModalVisible(!modalVisible)}>
           <View
             style={{
@@ -607,7 +593,7 @@ const ProfileBody = ({navigation}) => {
                 ? {
                     paddingLeft: 0,
                     paddingRight: 0,
-                    // height: hp(7),
+               
                     padding: 5,
 
                     justifyContent: 'center',
@@ -732,7 +718,7 @@ const ProfileBody = ({navigation}) => {
                 ? {
                     paddingLeft: 0,
                     paddingRight: 0,
-                    // height: hp(7),
+                 
                     padding: 5,
 
                     justifyContent: 'center',
@@ -776,77 +762,7 @@ const ProfileBody = ({navigation}) => {
             }
           />
 
-          {/* <View>
-            <View style={styles.contactView}>
-              <TouchableOpacity
-                onPress={() => setContactVisible(!contactVisible)}
-                style={{
-                  flexDirection: 'row',
-                  padding: 0,
-                  justifyContent: 'space-between',
-                }}>
-                <TextComponent
-                  text={strings.contact}
-                  textStyle={styles.contactLabel}
-                />
-                {!contactVisible && (
-                  <IconComponent
-                    iconName={iconNames.phone}
-                    iconSize={20}
-                    iconViewStyle={{
-                      justifyContent: 'center',
-                      alignItems: 'center',
-
-                      // padding: spacing.xxs,
-                    }}
-                  />
-                )}
-              </TouchableOpacity>
-              {/* {contactVisible && ( */}
-          {/* {console.log('contact', contact)}
-              <PhoneInput
-                // ref={contactRef}
-                // defaultValue={contact}
-                defaultCode={state.countryCode}
-                layout="first"
-                withShadow={false}
-                value={contact}
-                textInputProps={{
-                  maxLength: validLength,
-                  placeholderTextColor: styles.placeholderColor,
-                  editable: isEditable,
-                  // placeholder: contact
-                }}
-                autoFocus={true}
-                disableArrowIcon={false}
-                placeholder={strings.contactMsg}
-                textInputStyle={[styles.textInputStyle]}
-                containerStyle={styles.phoneContainer}
-                flagButtonStyle={styles.flagButtonStyle}
-                withDarkTheme={theme.dark}
-                countryPickerButtonStyle={{}}
-                codeTextStyle={styles.countryCodeTextStyle}
-                textContainerStyle={styles.textContainer}
-                onChangeFormattedText={text => {
-                  // setState(prevState => ({...prevState, contact: text}));
-                }}
-                onChangeCountry={country => {
-                  handleValidCountryLength(country);
-                }}
-                onChangeText={text => {
-                  setContact(text);
-                  console.log(isValidNumber(text, state.countryCode));
-                  // setState(prevState => ({...prevState, contact: text}));
-                  if (isValidNumber(text, state.countryCode)) {
-                    setValidLength(text.length);
-                  }
-                }}
-              />
-            </View>
-            {errors != null && errors['contact'] != undefined && (
-              <Text style={[styles.errorStyle]}>{errors['contact']}</Text>
-            )}
-          </View> */}
+         
 
           <FloatingTextInputIconComponent
             labelText={!isEditable ? '' : strings.password}
@@ -889,7 +805,7 @@ const ProfileBody = ({navigation}) => {
               styles.containerStyle,
               isEditable ? {height: 'auto'} : {height: hp(5)},
             ]}
-            // onSubmitEditing={() => confirmPassRef.current.focus()}
+        
             returnType={'done'}
             errorStyle={styles.errorStyle}
             customLabelStyles={styles.customLabelStyles}

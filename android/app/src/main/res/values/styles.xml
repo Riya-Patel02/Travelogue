@@ -6,7 +6,16 @@
         <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
         <item name="android:windowBackground">@drawable/background_launch</item>
         <item name="android:windowIsTranslucent">true</item>
+        <item name="android:datePickerDialogTheme">@style/Dialog.Theme</item>
+        <item name="android:timePickerDialogTheme">@style/Dialog.Theme</item>
     </style>
 
- 
+
+    <!-- Configuration for Dialog.theme. -->
+    <style name="Dialog.Theme" parent="Theme.AppCompat.Light.Dialog">
+        <!-- BackgroundColor of the date modal -->
+        <item name="colorAccent">#312b61</item>
+        <!-- Change textColor of the date modal -->
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
 </resources>

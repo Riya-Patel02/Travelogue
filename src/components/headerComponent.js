@@ -74,12 +74,12 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   basicMiddleStyle: {
-    // flex: 1,
+  
     justifyContent: 'center',
     alignItems: 'center',
   },
   basicRightStyle: {
-    // flex: 1,
+ 
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
