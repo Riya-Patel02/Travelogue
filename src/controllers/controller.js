@@ -12,7 +12,7 @@ class ApiController {
       axios
         .get(finalUrl, this.config)
         .then(response => {
-          // console.log('Response:', response.data);
+       
           resolve(response.data);
         })
         .catch(error => {
@@ -27,7 +27,7 @@ class ApiController {
       axios
         .post(finalUrl, this.config)
         .then(response => {
-          console.log('Response:', response.data);
+    
           resolve(response.data);
         })
         .catch(error => {
@@ -42,7 +42,7 @@ class ApiController {
       axios
         .put(finalUrl, this.config)
         .then(response => {
-          console.log('Response:', response.data);
+    
           resolve(response.data);
         })
         .catch(error => {

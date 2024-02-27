@@ -115,7 +115,7 @@ const BookingBody = ({navigation, selectedCard}) => {
 
         setBtnDisabled(false)
 
-        // console.log('price', totalPrice);
+       
       }
     };
 

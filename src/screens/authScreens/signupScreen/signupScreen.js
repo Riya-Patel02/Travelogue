@@ -146,7 +146,7 @@ const SignupBody = ({onShowImageModel, navigation, profileImage}) => {
     setState(prevState => ({...prevState, [field]: text}));
   };
 
-  console.log('email', getAllFav);
+
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       setErrors({});
@@ -241,7 +241,7 @@ const SignupBody = ({onShowImageModel, navigation, profileImage}) => {
       validatedPassword &&
       validatedConfirmPassword
     ) {
-      console.log('valid');
+  
       handleErrors(null);
 
       const userEmailExists = allUsers.some(user => user.email === state.email);
@@ -291,7 +291,7 @@ const SignupBody = ({onShowImageModel, navigation, profileImage}) => {
     setTimeout(() => setContact(null), 1000);
   };
 
-  console.log('all', allUsersfromRedux);
+
 
   return (
     <View
@@ -639,7 +639,7 @@ const SignupScreen = ({navigation}) => {
     if (cameraPermitted) {
       console.log('Permitted');
       await launchCamera(options, response => {
-        console.log(response);
+      
 
         if (response.didCancel) {
           console.log('User pressed the cancel button');
@@ -651,7 +651,7 @@ const SignupScreen = ({navigation}) => {
           return;
         }
 
-        // console.log(response.assets.entries());
+        
         for (var items in response) {
           const resArr = response[items];
           for (var i in resArr) {

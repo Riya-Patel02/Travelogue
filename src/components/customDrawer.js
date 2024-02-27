@@ -44,11 +44,11 @@ const CustomDrawer = props => {
   );
   useEffect(() => {
     if (currentUser) {
-      console.log('current', currentUser);
+    
       setState({userObj: currentUser});
     }
   }, [currentUser]);
-  console.log('props', props.params);
+
 
   return (
     <DrawerContentScrollView {...props}>

@@ -1,6 +1,6 @@
 const DateTimePickerComponent = ({value, onDateChange}) => {
   const minimumDate = new Date();
-  console.log('in');
+
   return (
     <DatePicker
       value={value}

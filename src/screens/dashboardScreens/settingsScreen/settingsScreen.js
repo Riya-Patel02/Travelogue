@@ -124,7 +124,7 @@ const SettingsBody = ({navigation}) => {
   useEffect(() => {
     if (isSoundOn) {
       const vol = tune.getVolume();
-      console.log(vol);
+    
       tune.play();
     } else {
       tune.stop();

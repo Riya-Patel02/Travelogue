@@ -37,7 +37,7 @@ const Stack = createStackNavigator();
 const RootNavigation = () => {
   const token = useSelector(selectIsLoggedIn);
   const appTheme = useTheme();
-  console.log('tok', token);
+
   return (
     <ThemeProvider
       children={
@@ -162,7 +162,7 @@ const App = ({}) => {
 
         appState.current = nextAppState;
         setAppStateVisible(appState.current);
-        console.log('AppState', appState.current);
+      
 
         // Fetch data when the app state changes
         try {
@@ -176,7 +176,7 @@ const App = ({}) => {
             strings.setLanguage(lang);
           } else {
             strings.setLanguage('en'); // Default language
-            console.log('done');
+          
           }
 
           // Set login status

@@ -54,7 +54,7 @@ const FavoriteBody = ({data, favList, setFavList, navigation}) => {
     );
   };
 
-  console.log(favList);
+
   return (
     <View
       style={{

@@ -189,7 +189,7 @@ const getFavlist= useSelector(selectFavList)
 
   useFocusEffect(
     useCallback(() => {
-      console.log('resort foc');
+      
       dispatch(fetchData(constants.storageKeys.FAVLIST));
       
     }, [navigation]),

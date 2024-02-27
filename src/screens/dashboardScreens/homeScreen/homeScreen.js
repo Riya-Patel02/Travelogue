@@ -126,7 +126,7 @@ const HomeScreenBody = ({navigation}) => {
     setTimeout(
       () =>
         searchUserAuthData(currentUser.email).then(res =>
-          // console.log('inres',...res),
+       
           dispatch(
             saveAsyncData(
               constants.storageKeys.CURRENTUSER,
