@@ -12,7 +12,7 @@ class ApiController {
       axios
         .get(finalUrl, this.config)
         .then(response => {
-       
+          
           resolve(response.data);
         })
         .catch(error => {
